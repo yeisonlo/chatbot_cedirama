@@ -15,7 +15,8 @@ body {
     (function(w,d,scriptTagName,globalName,scriptAddress,tk,val){
     w['ChatLynn-Widget']=globalName;w[globalName]=w[globalName]||function(){w[globalName].s=scriptAddress;(w[globalName].q=w[globalName].q||[]).push(arguments);};if(tk){w[globalName].t=tk;} if(val){w[globalName].v=val;} var formData=new FormData();formData.append("tk",tk);var request=new XMLHttpRequest();request.open("POST",scriptAddress,true);request.onreadystatechange=function(){if(this.readyState===4){scriptElement=d.createElement(scriptTagName);otherScriptElement=d.getElementsByTagName(scriptTagName)[0];scriptElement.async=1;scriptElement.text=this.responseText;otherScriptElement.parentNode.insertBefore(scriptElement,otherScriptElement);}};request.send(formData);})
     (window,document,'script','mw','https://premium-sandbox.lynn.cx/widget/widget?tenant=3266&sandboxcode=9ekHKcpH6J7&v=1.0','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsiMjkzNyIsImh0dHA6Ly9sb2NhbGhvc3Q6NjM5MzkvIl0sImNzdF90a191cmxfbm90aWZpY2F0aW9uc190b3BpYyI6ImZwZW5hX2ludGVncmF0aW9uc21lc3NhZ2VzX2NvbW1vbiIsImNzdF90a19kaXZpc2lvbiI6IltdIiwiY3N0X3RrX3RlbmFudCI6IjI5MzciLCJjc3RfdGtfYWNjZXNzX3Rva2VuIjoia2EzYXI1ZmZoYW1nZWowIiwiY3N0X3RrX2FjY2Vzc19zZWNyZXQiOiIxNDAyYTc1Ni0xMjVlLTQ2N2ItYmY1MS02YmFmMDMwNzljOTkiLCJjc3RfdGtfdG9rZW5fb25lX3VzZSI6ImZhbHNlIiwiY3N0X3RrX3RoZW1lX3dpZGdldF9pZCI6ImNjMWNkMmJiLWUzOTUtNDQ5ZS1iMDQyLWY4ZTQ5NDlkOTNmNyIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NjM5MzkvIn0.yVCFdDw5_6dNYnVWb-XexXZpMuCKoqs-xzxf-XfaWm4','');
-    mw('create','uid',{uid:"68395-2937"},{});
+    let uid = (Math.random()*1000).toString().slice(-3);
+    mw('create','uid',{uid:uid},{});
     </script>
 </body>
 </html>
