@@ -16,9 +16,23 @@ body {
     (function(w,d,scriptTagName,globalName,scriptAddress,tk,val){
     w['ChatLynn-Widget']=globalName;w[globalName]=w[globalName]||function(){w[globalName].s=scriptAddress;(w[globalName].q=w[globalName].q||[]).push(arguments);};if(tk){w[globalName].t=tk;} if(val){w[globalName].v=val;} var formData=new FormData();formData.append("tk",tk);var request=new XMLHttpRequest();request.open("POST",scriptAddress,true);request.onreadystatechange=function(){if(this.readyState===4){scriptElement=d.createElement(scriptTagName);otherScriptElement=d.getElementsByTagName(scriptTagName)[0];scriptElement.async=1;scriptElement.text=this.responseText;otherScriptElement.parentNode.insertBefore(scriptElement,otherScriptElement);}};request.send(formData);})
     (window,document,'script','mw','https://lynn-latam-production-br-ch-reg-common.azurewebsites.net/widget/widget?v=1.0','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsiMzI2NiIsImh0dHA6Ly9sb2NhbGhvc3Q6NjM5MzkvIl0sImNzdF90a191cmxfbm90aWZpY2F0aW9uc190b3BpYyI6InBjb21tb25faW50ZWdyYXRpb25zbWVzc2FnZXMiLCJjc3RfdGtfZGl2aXNpb24iOiJbXSIsImNzdF90a190ZW5hbnQiOiIzMjY2IiwiY3N0X3RrX2FjY2Vzc190b2tlbiI6IjQ4dHo3aDE3MXFybjNyNCIsImNzdF90a19hY2Nlc3Nfc2VjcmV0IjoiOWM3MDEzOWEtYTE5Zi00YTFiLTg5YTQtZDUwMDBiMjg5MjlkIiwiY3N0X3RrX3Rva2VuX29uZV91c2UiOiJmYWxzZSIsImNzdF90a190aGVtZV93aWRnZXRfaWQiOiJjYzFjZDJiYi1lMzk1LTQ0OWUtYjA0Mi1mOGU0OTQ5ZDkzZjciLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjYzOTM5LyJ9.jCOkWCnEkSC1ofgDLylfZITBD70UEX-sH701vG1iA70','');
-    let uid = (Math.random()*1000).toString().slice(-3);
-    let email = "yeisonloc@hotmail.com"
-    mw('create', 'cedula' , { cedula: uid, email:email, nombre: 'Yeison lopez' });
+    function generateUUID() { // Public Domain/MIT
+    var d = new Date().getTime();//Timestamp
+    var d2 = ((typeof performance !== 'undefined') && performance.now && (performance.now()*1000)) || 0;//Time in microseconds since page-load or 0 if unsupported
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = Math.random() * 16;//random number between 0 and 16
+        if(d > 0){//Use timestamp until depleted
+            r = (d + r)%16 | 0;
+            d = Math.floor(d/16);
+        } else {//Use microseconds since page-load if supported
+            r = (d2 + r)%16 | 0;
+            d2 = Math.floor(d2/16);
+        }
+        return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+    });
+}
+    let uid = generateUUID();
+    mw('create', 'uid' , {uid});
     </script>
 
 </body>
