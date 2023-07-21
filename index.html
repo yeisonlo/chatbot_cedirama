@@ -31,8 +31,7 @@ body {
         return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
     });
 }
-    let uid = generateUUID();
-    mw('create', 'uid' , {uid:uid});
+    mw('create', 'uid' , {uid:generateUUID()});
     </script>
 
 </body>
